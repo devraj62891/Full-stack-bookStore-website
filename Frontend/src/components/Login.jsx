@@ -1,79 +1,43 @@
 import React from "react";
-import { Link, useHref } from "react-router-dom";
-import { useForm } from "react-hook-form"
-
+import { Link } from "react-router-dom";
 
 function Login() {
-  const {
-    register,
-    handleSubmit,
-    
-    formState: { errors },
-  } = useForm()
-
-  const onSubmit = (data) => console.log(data)
   return (
     <>
-      <dialog id="my_modal_3" className="modal ">
-        <div className="modal-box dark:bg-slate-700">
-          <form method="dialog" onSubmit={handleSubmit(onSubmit)}>
+      <dialog id="my_modal_3" className="modal">
+        <div className="modal-box">
+          <form method="dialog">
             {/* if there is a button in form, it will close the modal */}
-            <button
-            onClick={()=>document.getElementById('my_modal_3').close()}
-              
-              className="btn btn-sm btn-circle btn-ghost absolute right-2 top-2"
-            >
+            <button className="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">
               ✕
             </button>
-
-            <h3 className="font-bold text-lg">Login</h3>
-            {/* Email */}
-            <div className="mt-4 space-y-2">
-              <span>Email</span>
-              <br />
-              <input
-                type="email"
-                placeholder="Enter your email"
-                className="w-80 px-3 py-1 border rounded-md outline-none dark:text-black"
-                {...register("email", { required: true })}
-              />
-              <br />
-              {errors.email && <span className="text-sm text-red-500 p-2 font-bold">This field is required</span>}
-             
-            </div>
-            {/* password */}
-            <div className="mt-4 space-y-2 ">
-              <span>Password</span>
-              <br />
-              <input
-                type="password"
-                placeholder="Enter your password"
-                className="w-80 px-3 py-1 border rounded-md outline-none dark:text-black"
-                {...register("password", { required: true })}
-              />
-              <br />
-              {errors.password && <span className="text-sm text-red-500 p-2 font-bold">This field is required</span > }
-              <br />
-
-            
-            </div>
-
-            {/* Button */}
-            <div className="flex justify-around mt-6">
-              <button  type="submit" className="bg-pink-500 text-white rounded-md px-3 py-1 hover:bg-pink-700 duration-200">
-                Login
-              </button>
-              <p>
-                Not registered?{" "}
-                <Link
-                  to="/signup"
-                  className="underline text-blue-500 cursor-pointer"
-                >
-                  Signup
-                </Link>{" "}
-              </p>
-            </div>
           </form>
+          <h3 className="font-bold text-lg">Login</h3>
+          <div className="p-3">
+            <span>Email</span>
+            <br />
+            <input
+              type="email"
+              className="rounded-md outline-none w-80 m-2"
+              placeholder="please enter your email"
+            />
+            <br />
+            <span>Password</span><br />
+            <input 
+            type="password"
+            className="rounded-md outline-none w-80 m-2 "
+              placeholder="please enter your password"
+            />
+          </div >
+          <div className="flex justify-around mt-3">
+            <button
+            className=" bg-pink-400 dark:bg-pink-400 dark:hover:bg-pink-400 hover:bg-pink-300 text-white rounded-md p-2 duration-300"
+            >Login</button>
+            <p >
+
+          dont have acc?<Link to={"/signup"} className="text-blue-500 cursor-pointer underline ml-1">Sign up!</Link>
+            </p>
+          </div>
         </div>
       </dialog>
     </>

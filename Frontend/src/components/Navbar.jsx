@@ -5,14 +5,14 @@ function Navbar() {
   const [theme, setTheme] = useState(
     localStorage.getItem("theme") ? localStorage.getItem("theme") : "light"
   );
-  const element=document.documentElement;
+  const element = document.documentElement;
 
   useEffect(() => {
-    if(theme==='dark'){
-     element.classList.add("dark");
+    if (theme === "dark") {
+      element.classList.add("dark");
       localStorage.setItem("theme", "dark");
       document.body.classList.add("dark");
-    }else{
+    } else {
       element.classList.remove("dark");
       localStorage.setItem("theme", "light");
       document.body.classList.remove("dark");
@@ -37,30 +37,37 @@ function Navbar() {
   const navItem = (
     <>
       <li>
-        <a href="/">Home</a>
+        <a href="/" className="hover:bg-slate-600 duration-300">
+          Home
+        </a>
       </li>
       <li>
-        <a href="/courses">Course</a>
+        <a href="/courses" className="hover:bg-slate-600 duration-300">
+          Course
+        </a>
       </li>
       <li>
-        <a href="/contact">Contact</a>
+        <a href="/contact" className="hover:bg-slate-600 duration-300">
+          Contact
+        </a>
       </li>
       <li>
-        <a>About</a>
+        <a href="/about" className="hover:bg-slate-600 duration-300">
+          About
+        </a>
       </li>
     </>
   );
 
   return (
-  
-      <div
-      className={`${theme==='dark'?'dark':'light'}
+    <div
+      className={`${theme === "dark" ? "dark" : "light"}
        
         max-w-screen-2xl container mx-auto md:px-20 px-4 dark:bg-slate-800 dark:text-white fixed top-0 left-0 right-0 z-50 ${
-        sticky
-          ? "sticky-navbar shadow-md bg-base-200 dark:bg-slate-700 dark:text-white duration-300 transition-all ease-in-out"
-          : ""
-      }`}
+          sticky
+            ? "sticky-navbar shadow-md bg-base-200 dark:bg-slate-700 dark:text-white duration-300 transition-all ease-in-out"
+            : ""
+        }`}
     >
       <div className={`navbar`}>
         <div className="navbar-start">
@@ -96,7 +103,7 @@ function Navbar() {
           </div>
           <div className="hidden md:block mx-3">
             <label className=" border px-3 py-2 rounded-md flex items-center gap-2">
-              <input 
+              <input
                 type="text "
                 className="grow outline-none dark:bg-slate-800"
                 placeholder="Search"
@@ -144,20 +151,20 @@ function Navbar() {
               <path d="M21.64,13a1,1,0,0,0-1.05-.14,8.05,8.05,0,0,1-3.37.73A8.15,8.15,0,0,1,9.08,5.49a8.59,8.59,0,0,1,.25-2A1,1,0,0,0,8,2.36,10.14,10.14,0,1,0,22,14.05,1,1,0,0,0,21.64,13Zm-9.5,6.69A8.14,8.14,0,0,1,7.08,5.22v.27A10.15,10.15,0,0,0,17.22,15.63a9.79,9.79,0,0,0,2.1-.22A8.11,8.11,0,0,1,12.14,19.73Z" />
             </svg>
           </label>
-          <div>
-            <a
-            onClick={()=>document.getElementById('my_modal_3').showModal()}
-             className="bg-black text-white rounded-md hover:bg-slate-800 px-3 py-2 cursor-pointer duration-300">
-              Login
-            </a>
-            <Login/>
+          <div className="">
+            <div>
+              <a
+             onClick={()=>document.getElementById('my_modal_3').showModal()}
+              className="dark:bg-pink-400 bg-pink-400 hover:bg-pink-300 text-white rounded-md p-3 dark:hover:bg-pink-300 duration-300 cursor-pointer">
+                Login
+              </a>
+              <Login/>
+            </div>
           </div>
         </div>
       </div>
     </div>
- 
   );
 }
 
 export default Navbar;
-
