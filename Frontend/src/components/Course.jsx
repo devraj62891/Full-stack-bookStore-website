@@ -4,27 +4,10 @@ import Cards from "./Cards";
 import { Link } from "react-router-dom";
 import { useState,useEffect } from "react";
 import axios from "axios"
-
+import data from "../list.json"
 
 function Course() {
-  const [book,setBook]=useState([]);
-  useEffect(()=>{
-    const getData=async()=>{
-
-      try {
-       const res=await axios.get("http://localhost:4001/books");
-       console.log(res.data);
-       
-       setBook(res.data);
-
-      } catch (error) {
-       console.log("unable to fetch book data from api :",error);
-       
-      }
-    }
-
-    getData();
-  },[])
+  const book=data;
   return (
     <>
       <div className="max-w-screen-2xl container mx-auto md:px-20 px-4">

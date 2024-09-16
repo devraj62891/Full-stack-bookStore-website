@@ -37,22 +37,22 @@ function Navbar() {
   const navItem = (
     <>
       <li>
-        <a href="/" className="hover:bg-slate-600 duration-300">
+        <a href="/" className="hover:bg-slate-300 duration-300">
           Home
         </a>
       </li>
       <li>
-        <a href="/courses" className="hover:bg-slate-600 duration-300">
+        <a href="/courses" className="hover:bg-slate-300 duration-300">
           Course
         </a>
       </li>
       <li>
-        <a href="/contact" className="hover:bg-slate-600 duration-300">
+        <a href="/contact" className="hover:bg-slate-300 duration-300">
           Contact
         </a>
       </li>
       <li>
-        <a href="/about" className="hover:bg-slate-600 duration-300">
+        <a href="/about" className="hover:bg-slate-300 duration-300">
           About
         </a>
       </li>
@@ -155,7 +155,7 @@ function Navbar() {
             <div>
               <a
              onClick={()=>document.getElementById('my_modal_3').showModal()}
-              className="dark:bg-pink-400 bg-pink-400 hover:bg-pink-300 text-white rounded-md p-3 dark:hover:bg-pink-300 duration-300 cursor-pointer">
+              className="dark:bg-pink-400 bg-pink-400 hover:bg-pink-500 text-white rounded-md p-3 dark:hover:bg-pink-300 duration-300 cursor-pointer">
                 Login
               </a>
               <Login/>

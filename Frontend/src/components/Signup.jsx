@@ -5,25 +5,25 @@ import Login from "./Login";
 function Signup() {
   return (
     <>
-      <div className="flex h-screen items-center justify-center">
+      <div className="flex h-screen items-center justify-center dark:bg-slate-900 bg-slate-200">
         <div  className="p-5 rounded-md ">
-          <div className="modal-box">
+          <div className="modal-box dark:bg-slate-700">
             <form method="dialog">
               {/* if there is a button in form, it will close the modal */}
               <Link
                 to={"/"}
-                className="btn btn-sm btn-circle btn-ghost absolute right-2 top-2"
+                className="btn btn-sm btn-circle btn-ghost absolute right-2 top-2 dark:hover:bg-slate-800"
               >
                 ✕
               </Link>
             </form>
             <h3 className="font-bold text-lg">Signup</h3>
-            <div className="p-3">
+            <div className="p-3 dark:bg-slate-700">
               <span>Name</span>
               <br />
               <input
                 type="text"
-                className="rounded-md outline-none w-80 m-2"
+                className="rounded-md outline-none w-80 m-2 dark:bg-slate-700 "
                 placeholder="enter your full name"
               />
               <br />
@@ -31,7 +31,7 @@ function Signup() {
               <br />
               <input
                 type="email"
-                className="rounded-md outline-none w-80 m-2"
+                className="rounded-md outline-none w-80 m-2 dark:bg-slate-700"
                 placeholder="please enter your email"
               />
               <br />
@@ -39,7 +39,7 @@ function Signup() {
               <br />
               <input
                 type="password"
-                className="rounded-md outline-none w-80 m-2"
+                className="rounded-md outline-none w-80 m-2 dark:bg-slate-700"
                 placeholder="please enter your password"
               />
             </div>

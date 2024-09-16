@@ -4,28 +4,28 @@ import { Link } from "react-router-dom";
 function Login() {
   return (
     <>
-      <dialog id="my_modal_3" className="modal">
-        <div className="modal-box">
-          <form method="dialog">
+      <dialog id="my_modal_3" className="modal ">
+        <div className="modal-box dark:bg-slate-900 ">
+          <form method="dialog" className="">
             {/* if there is a button in form, it will close the modal */}
-            <button className="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">
+            <button className="btn btn-sm btn-circle btn-ghost absolute right-2 top-2 dark:bg-slate-900 dark:hover:bg-slate-700">
               ✕
             </button>
           </form>
           <h3 className="font-bold text-lg">Login</h3>
-          <div className="p-3">
+          <div className="p-3 ">
             <span>Email</span>
             <br />
             <input
               type="email"
-              className="rounded-md outline-none w-80 m-2"
+              className="rounded-md outline-none w-80 m-2 dark:bg-slate-900"
               placeholder="please enter your email"
             />
             <br />
             <span>Password</span><br />
             <input 
             type="password"
-            className="rounded-md outline-none w-80 m-2 "
+            className="rounded-md outline-none w-80 m-2 dark:bg-slate-900"
               placeholder="please enter your password"
             />
           </div >

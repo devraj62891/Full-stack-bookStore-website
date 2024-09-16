@@ -4,30 +4,12 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
 import Cards from './Cards';
-import { useState,useEffect } from 'react';
+// import { useState,useEffect } from 'react';
+import data from "../list.json"
 
 
 function FreeBook() {
-  const [book,setBook]=useState([]);
-  useEffect(()=>{
-    const getData=async()=>{
-
-      try {
-       const res=await axios.get("http://localhost:4001/books");
-       
-       const freeBooks = res.data.filter((data) => data.category === 'Free');
-       console.log("free books: ",freeBooks);
-       setBook(freeBooks);
-
-      } catch (error) {
-       console.log("unable to fetch book data from api :",error);
-       
-      }
-    }
-
-    getData();
-  },[])
-   
+const book=data.filter((item)=>item.category==="Free")
   
 
     var settings = {
