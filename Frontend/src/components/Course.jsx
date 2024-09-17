@@ -7,7 +7,24 @@ import axios from "axios"
 import data from "../list.json"
 
 function Course() {
-  const book=data;
+  // const book=data;
+  const   [book,setBook]=useState([]);
+useEffect(() => {
+  // Define the async function to fetch book data using axios
+  const fetchBookData = async () => {
+      try {
+          const response = await axios.get('http://localhost:4001/book/getBookData');
+          console.log("books are present in database");
+          
+          setBook(response.data); // Axios automatically parses JSON responses
+      } catch (error) {
+          console.error("Error fetching book data:", error);
+      }
+  };
+
+  // Call the async function
+  fetchBookData();
+}, []);
   return (
     <>
       <div className="max-w-screen-2xl container mx-auto md:px-20 px-4">

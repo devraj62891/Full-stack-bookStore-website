@@ -12,7 +12,7 @@ const AboutPage = () => {
       
       <div>
       <a href="/">
-      <button className='bg-pink-600 rounded-lg p-2 mt-2'>goBack</button>
+      <button className='bg-pink-600 rounded-lg p-2 mt-5 '>goBack</button>
       </a>
       </div>
     

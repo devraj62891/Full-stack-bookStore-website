@@ -1,15 +1,33 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import axios from 'axios';
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
 import Cards from './Cards';
+
 // import { useState,useEffect } from 'react';
-import data from "../list.json"
+
 
 
 function FreeBook() {
-const book=data.filter((item)=>item.category==="Free")
+const   [book,setBook]=useState([]);
+useEffect(() => {
+  // Define the async function to fetch book data using axios
+  const fetchBookData = async () => {
+      try {
+          const response = await axios.get('http://localhost:4001/book/getBookData');
+          console.log("books are present in database");
+          
+          setBook(response.data.filter((data)=>data.category==="Free")); // Axios automatically parses JSON responses
+      } catch (error) {
+          console.error("Error fetching book data:", error);
+      }
+  };
+
+  // Call the async function
+  fetchBookData();
+}, []);
+// const book=data.filter((item)=>item.category==="Free")
   
 
     var settings = {
