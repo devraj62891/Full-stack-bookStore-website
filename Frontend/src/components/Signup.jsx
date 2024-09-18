@@ -4,6 +4,7 @@ import Login from "./Login";
 import { useForm } from "react-hook-form";
 import axios from "axios";
 import toast from "react-hot-toast";
+
 function Signup() {
   const location = useLocation();
   const navigate = useNavigate();
@@ -20,13 +21,18 @@ function Signup() {
       email: data.email,
       password: data.password,
     };
-    await axios
-      .post("http://localhost:4001/user/signup", userInfo)
+    await axios.post("http://localhost:4001/user/signup", userInfo, {
+      headers: {
+        "Content-Type": "application/json",  // Ensure correct content type
+      },
+    })
+    
       .then((res) => {
         console.log(res.data);
         if (res.data) {
           toast.success("Signup Successfully");
-          navigate(from, { replace: true });
+          // navigate(from, { replace: true });
+          // alert("signup successfullky")
         }
         localStorage.setItem("Users", JSON.stringify(res.data.user));
       })
@@ -34,9 +40,11 @@ function Signup() {
         if (err.response) {
           console.log(err);
           toast.error("Error: " + err.response.data.message);
+          // alert("Error"+ err.response.data.message)
         }
       });
   };
+
   return (
     <>
       <div className="flex h-screen items-center justify-center">
@@ -108,7 +116,7 @@ function Signup() {
                   Signup
                 </button>
                 <p className="text-xl">
-                  Have account?{" "}
+                  Have an account?{" "}
                   <button
                     className="underline text-blue-500 cursor-pointer"
                     onClick={() =>
@@ -116,14 +124,15 @@ function Signup() {
                     }
                   >
                     Login
-                  </button>{" "}
-                  <Login />
+                  </button>
                 </p>
               </div>
             </form>
           </div>
         </div>
       </div>
+      {/* Login modal outside <p> */}
+      <Login />
     </>
   );
 }

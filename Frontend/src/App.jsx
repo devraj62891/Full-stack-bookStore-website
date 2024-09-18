@@ -8,6 +8,7 @@ import { Routes,Route } from 'react-router-dom'
 import Contact from './components/Contact'
 import AboutPage from './components/AboutPage'
 import Signup from './components/Signup'
+import { Toaster } from 'react-hot-toast'
 
 
 function App() {
@@ -22,6 +23,7 @@ function App() {
    <Route path='/about' element={<AboutPage/>}/>
    
    </Routes>
+   <Toaster />
 
    </>
   )
