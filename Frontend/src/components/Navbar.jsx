@@ -3,6 +3,7 @@ import { useState } from "react";
 import Login from "./Login";
 import Logout from "./Logout";
 import { useAuth } from "../context/AuthProvider";
+import { Link } from 'react-router-dom';
 
 const handleClick = () => {
   alert("login first"); // Replace '/target-path' with the path you want to navigate to
@@ -46,8 +47,9 @@ function Navbar() {
         <a href="/">Home</a>
       </li>
       <li>
+      <Link to="/course">Course</Link>
         {authUser ? (
-          <a href="/course">Course <span className="text-green-300">buy</span> </a>
+          <Link to="/course">Course <span className="text-green-300">buy</span> </Link>
 
         ) : (
           <button onClick={handleClick}>
