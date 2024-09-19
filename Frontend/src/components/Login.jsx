@@ -22,8 +22,10 @@ function Login() {
         if (res.data) {
           toast.success("Loggedin Successfully");
           document.getElementById("my_modal_3").close();
+          
           setTimeout(() => {
-            window.location.reload();
+            // window.location.reload();
+            window.location.href = '/';
             localStorage.setItem("Users", JSON.stringify(res.data.user));
           }, 1000);
         }

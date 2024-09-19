@@ -10,7 +10,7 @@ function Banner() {
           <div className="space-y-12">
             <h1 className="font-bold text-4xl">
               Hello, welcome here to learn someting
-              <span className="text-pink-400"> new everyday!!</span>
+              <span className="text-pink-600"> new everyday!!</span>
             </h1>
             <p className="text-xl">
             Welcome to bookStore Discover a curated collection of books across genres, fostering imagination and knowledge. Enjoy personalized recommendations and cozy reading nooks. Happy reading!

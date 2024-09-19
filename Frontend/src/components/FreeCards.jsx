@@ -16,7 +16,7 @@ function FreeCards({ item }) {
           <div className="card-body">
             <h2 className="card-title">
               {item.name}
-              <div className="badge badge-secondary">NEW</div>
+              <div className="badge badge-secondary bg-yellow-300  border-none">FREE</div>
             </h2>
             <p>{item.title}</p>
             <div className="card-actions justify-between">
