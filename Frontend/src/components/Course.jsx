@@ -34,12 +34,7 @@ useEffect(() => {
             <span className="text-pink-400">have you here :)</span>
           </h1>
           <p className="mt-14 ">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis,
-            ipsam! Aut maiores odio, officia nihil sint architecto ex culpa
-            doloribus nisi voluptate sunt laudantium at unde error deserunt sed
-            optio maxime consequatur repudiandae cupiditate officiis et ipsam
-            pariatur. Vero dignissimos corrupti numquam reiciendis, accusamus
-            magni.
+          Explore our premium selection of paid books, offering exclusive titles across genres. Dive into captivating reads, carefully curated for book lovers seeking high-quality content and unique, enriching experiences
           </p>
           <Link to={"/"}>
           

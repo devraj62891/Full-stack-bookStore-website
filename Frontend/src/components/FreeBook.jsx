@@ -70,7 +70,7 @@ function FreeBook() {
     <>
       <div className="max-w-screen-2xl container mx-auto md:px-20 px-4 pt-20">
         <div>
-          <h1 className="font-semibold text-xl ">Free sample pdf </h1>
+          <h1 className="font-semibold text-xl text-pink-300 ">Free sample pdf </h1>
           <p>
             Get a taste of some of our top-rated books—absolutely free! These
             sample books allow you to dive into the first few chapters without

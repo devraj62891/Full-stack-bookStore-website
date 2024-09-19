@@ -21,7 +21,7 @@ function FreeCards({ item }) {
             <p>{item.title}</p>
             <div className="card-actions justify-between">
               <div className="badge badge-outline">${item.price}</div>
-              <div className="badge p-3 cursor-pointer hover:text-white duration-100 badge-outline hover:bg-pink-400">
+              <div className="badge p-3 cursor-pointer hover:text-white duration-100 badge-outline hover:bg-blue-500 hover:border-none">
                 <a href={item.url}>
                     Read now
                 </a>
