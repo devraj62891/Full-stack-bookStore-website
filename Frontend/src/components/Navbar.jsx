@@ -44,10 +44,10 @@ function Navbar() {
   const navItems = (
     <>
       <li>
-        <a href="/">Home</a>
+        <Link to="/">Home</Link>
       </li>
       <li>
-      <Link to="/course">Course</Link>
+      
         {authUser ? (
           <Link to="/course">Course <span className="text-green-300">buy</span> </Link>
 
@@ -58,10 +58,10 @@ function Navbar() {
         )}
       </li>
       <li>
-        <a href="/contact">Contact</a>
+        <Link to="/contact">Contact</Link>
       </li>
       <li>
-        <a href="/about">About</a>
+        <Link to="/about">About</Link>
       </li>
     </>
   );
