@@ -13,7 +13,8 @@ useEffect(() => {
   // Define the async function to fetch book data using axios
   const fetchBookData = async () => {
       try {
-          const response = await axios.get('https://bookstore-x61b.onrender.com/book/getBookData');
+          const response = await axios.get('https://full-stack-bookstore-website.onrender.com/book/getBookData');
+          
           console.log("books are present in database");
           setBook(response.data.filter((data) => data.category != "Sample"));
           // setBook(response.data); // Axios automatically parses JSON responses

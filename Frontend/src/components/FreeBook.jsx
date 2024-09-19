@@ -15,7 +15,7 @@ function FreeBook() {
     const fetchBookData = async () => {
       try {
         const response = await axios.get(
-          "https://bookstore-x61b.onrender.com/book/getBookData"
+          "https://full-stack-bookstore-website.onrender.com/book/getBookData"
         );
         console.log("books are present in database");
 

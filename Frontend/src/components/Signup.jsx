@@ -21,7 +21,7 @@ function Signup() {
       email: data.email,
       password: data.password,
     };
-    await axios.post("https://bookstore-x61b.onrender.com/user/signup", userInfo, {
+    await axios.post("https://full-stack-bookstore-website.onrender.com/user/signup", userInfo, {
       headers: {
         "Content-Type": "application/json",  // Ensure correct content type
       },
