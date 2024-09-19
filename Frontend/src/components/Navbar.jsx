@@ -4,9 +4,8 @@ import Login from "./Login";
 import Logout from "./Logout";
 import { useAuth } from "../context/AuthProvider";
 
-
 const handleClick = () => {
- alert("login first")// Replace '/target-path' with the path you want to navigate to
+  alert("login first"); // Replace '/target-path' with the path you want to navigate to
 };
 
 function Navbar() {
@@ -47,26 +46,20 @@ function Navbar() {
         <a href="/">Home</a>
       </li>
       <li>
-        {
-          authUser?(
-       <a href="/course">Course</a>
+        {authUser ? (
+          <a href="/course">Course <span className="text-green-300">buy</span> </a>
 
-          ):(
-            <button onClick={handleClick}>
-       <a >Course</a>
-       </button>
-          )
-        }
-       
-
-        
-        
+        ) : (
+          <button onClick={handleClick}>
+            <a>Course <span className="text-red-500 font-bold">paid</span></a>
+          </button>
+        )}
       </li>
       <li>
-        <a>Contact</a>
+        <a href="/contact">Contact</a>
       </li>
       <li>
-        <a>About</a>
+        <a href="/about">About</a>
       </li>
     </>
   );
@@ -126,7 +119,7 @@ function Navbar() {
                   xmlns="http://www.w3.org/2000/svg"
                   viewBox="0 0 16 16"
                   fill="currentColor"
-                  className="w-4 h-4 opacity-70"
+                  className="w-4 h-4 opacity-70 hover:cursor-pointer hover:bg-slate-900"
                 >
                   <path
                     fillRule="evenodd"

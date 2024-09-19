@@ -1,13 +1,13 @@
 import React from "react";
 
-function Cards({ item }) {
+function FreeCards({ item }) {
   return (
     <>
       <div className="mt-4 my-3 p-3">
         <div className="card bg-base-100 w-92 shadow-xl hover:scale-105 duration-300 dark:bg-slate-700 dark:text-white">
-          <figure>
+          <figure className="bg-cover bg-center">
             <img
-              className="w-auto h-auto"
+              className="w-auto h-[400px]"
     
               src={item.image}
               alt="Shoes"
@@ -22,7 +22,9 @@ function Cards({ item }) {
             <div className="card-actions justify-between">
               <div className="badge badge-outline">${item.price}</div>
               <div className="badge p-3 cursor-pointer hover:text-white duration-100 badge-outline hover:bg-pink-400">
-                Buy Now
+                <a href={item.url}>
+                    Read now
+                </a>
               </div>
             </div>
           </div>
@@ -32,4 +34,4 @@ function Cards({ item }) {
   );
 }
 
-export default Cards;
+export default FreeCards;

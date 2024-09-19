@@ -15,8 +15,8 @@ useEffect(() => {
       try {
           const response = await axios.get('http://localhost:4001/book/getBookData');
           console.log("books are present in database");
-          
-          setBook(response.data); // Axios automatically parses JSON responses
+          setBook(response.data.filter((data) => data.category != "Sample"));
+          // setBook(response.data); // Axios automatically parses JSON responses
       } catch (error) {
           console.error("Error fetching book data:", error);
       }
