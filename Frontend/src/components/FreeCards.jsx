@@ -1,6 +1,12 @@
 import React from "react";
+import { useAuth } from "../context/AuthProvider";
 
 function FreeCards({ item }) {
+  const [authUser, setAuthUser] = useAuth();
+  const handleReadNowClick=()=>{
+    alert("Login first")
+  }
+
   return (
     <>
       <div className="mt-4 my-3 p-3">
@@ -22,9 +28,21 @@ function FreeCards({ item }) {
             <div className="card-actions justify-between">
               <div className="badge badge-outline">${item.price}</div>
               <div className="badge p-3 cursor-pointer hover:text-white duration-100 badge-outline hover:bg-blue-500 hover:border-none">
-                <a href={item.url}>
-                    Read now
-                </a>
+                {
+                  authUser? (
+                    <a 
+                
+                
+                  href={item.url}>
+                      Read now
+                  </a>
+                  ):(
+                    <button
+                    onClick={handleReadNowClick}
+                    >Read now</button>
+                  )
+                }
+               
               </div>
             </div>
           </div>
