@@ -10,6 +10,7 @@ import AboutPage from './components/AboutPage'
 import Signup from './components/Signup'
 import { Toaster } from 'react-hot-toast'
 import { useAuth } from './context/AuthProvider'
+import Introduction from './components/Introduction'
 
 
 function App() {
